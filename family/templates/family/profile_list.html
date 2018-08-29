@@ -1,0 +1,15 @@
+<h2>Here are all user profiles: </h2>
+<div>
+    <ul>
+        {% for profile in object_list %}
+            <li>{{ profile.first_name }} {{ profile.last_name }}
+            </li>
+        {% empty %}
+            <li>No profile yet.</li>
+        {% endfor %}
+
+    </ul>
+    <p>
+        <a href="{% url 'profile-add' %}">add a profile</a>
+    </p>
+</div>
